@@ -1,0 +1,32 @@
+<body>
+<div class="container">
+    <header>
+        <h1>Todo List ({{incompleteCount}})</h1>
+
+        <label class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+        </label>
+
+        {{> loginButtons}}
+
+        {{#if currentUser}}
+            <form class="new-task">
+                <input type="text" name="make" placeholder="Insert make of vehicle..." required />
+                <input type="text" name="model" placeholder="insert model of vehicle..." required />
+                <input type="text" name="year" placeholder="Insert year of vehicle..." required />
+                <button type="submit" class="">Submit</button>
+            </form>
+        {{/if}}
+
+    </header>
+
+    <ul>
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
+    </ul>
+
+    <!--<h3>Currently logged in as: <i>{{currentUser.username}}</i></h3>-->
+</div>
+</body>
